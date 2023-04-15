@@ -1,0 +1,263 @@
+/* Como declarar VARIABLES en Css: */
+:root{
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --oscuro: #212121;
+    --blanco: #FFFFFF;
+    --grisClaro: #DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+/* Estas etiquetas anteriores en el documento de css hacen que 1REM sea igual a 10PX, de esta forma los rem son mucho mas faciles de manejar, 
+RECORDEMOS: que los rems son claves en paginas que estén pensadas para verse en varios dispositivos, poruqe se adapta siempre al tamaño */
+
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size:2.8rem;
+}
+h3{
+    font-size:1.8rem;
+}
+.servicios, .navegacion-principal, .formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.titulo_top{
+    text-align: center;
+    font-size: 3.8rem;  
+    /* Con el siguiente codigo uso una variable de color creada anteriormente */
+    font-weight:bold ;
+    
+}
+.titulo_top span{
+    font-size: 2rem;
+    font-weight:bold ;
+}
+.nav-bg{
+    background-color: var(--secundario);
+}
+.contenedor{
+    max-width: 120rem; 
+    margin: 0 auto ;
+}
+.navegacion-principal{
+    display: flex;
+    justify-content: space-evenly;
+}
+.navegacion-principal a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold ;
+    padding: 1rem;
+
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: #212121;
+    
+}
+@media (min-width: 480px){
+    .navegacion-principal{
+        flex-direction:column;
+        align-items: center;
+    }
+}
+.imagen-bg{
+    background-image: url(../img/Background-programador.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:450px;
+    position: relative;
+
+    margin-bottom: 3rem;
+}
+
+.sombra {
+    -webkit-caja-sombra: 0px 5px 17px 0px rgba(112,112,112,0.54);
+    -moz-caja-sombra: 0px 5px 17px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 17px 0px rgba(112,112,112,0.54);
+
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.imagen-bg__contenido{
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 480px){
+    .imagen-bg__contenido{
+        text-align: center;
+    }
+}
+
+.imagen-bg__contenido h2,
+.imagen-bg__contenido p {
+    color: var(--blanco);
+
+}
+.ubicacion-titulo{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.boton-contactar{
+    background: var(--secundario);
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: bold;
+    width: auto;
+
+    padding: 1rem 3rem;
+    margin-top: 7rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+
+}
+.boton-contactar:hover{
+    cursor: pointer;
+}
+@media (max-width: 480px){
+    .boton-contactar{
+        width: 90%;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 768px){
+.servicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5rem;
+}
+} 
+
+.servicios h1, h2, h3 {
+    text-align: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.formulario {
+    background: var(--gris);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend {
+    color: var(--primario);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+
+.campo{
+    margin-bottom: 1rem;
+    
+}
+
+.campo label{
+    color: var(--blanco);
+    margin-bottom: .5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.input-text{
+    border: none;
+    width: 100%;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.enviar .boton-contactar{
+    width: 100%;
+}
+
+.links-paginas a{
+    text-decoration-line: none;
+    color: #212121;
+    font-size: 2rem;
+    justify-content: baseline;
+    margin: 1rem;
+    text-decoration-line: underline;
+    text-decoration-color: #0097A7;
+
+
+}
+
+.contenedor-links{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.links-paginas a:hover{
+    color: #0097A7;
+    
+}
